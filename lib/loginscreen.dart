@@ -1,5 +1,9 @@
+import 'package:arti/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'const.dart';
 
 
 
@@ -28,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                   textStyle: TextStyle(
                       fontSize: 34,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xffE41F28))),
+                      color: themecolor)),
             ),
             SizedBox(height: 10),
             Text('Please login to continue using our app'),
@@ -40,16 +44,16 @@ class _LoginPageState extends State<LoginPage> {
               decoration: InputDecoration(
                 alignLabelWithHint: true,
                 border: InputBorder.none,
-                labelText: "Name/Grid",
-                labelStyle: const TextStyle(color: Color(0xffE41F28)),
+                labelText: "Name / Grid",
+                labelStyle:  TextStyle(color: themecolor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color:Color(0xffE41F28)),
+                  borderSide:  BorderSide(color:themecolor),
                 ),
                 hintText: 'Enter your Name or Grid',
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color:Color(0xffE41F28)),
+                  borderSide:  BorderSide(color:themecolor),
                 ),
                 hintStyle: const TextStyle(fontSize: 16, color: Colors.black54),
                 contentPadding: const EdgeInsets.symmetric(
@@ -66,15 +70,15 @@ class _LoginPageState extends State<LoginPage> {
               alignLabelWithHint: true,
               border: InputBorder.none,
               labelText: "Password",
-              labelStyle: const TextStyle(color: Color(0xffE41F28)),
+              labelStyle:  TextStyle(color: themecolor),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: Color(0xffE41F28)),
+                borderSide:  BorderSide(color: themecolor),
               ),
               hintText: 'Enter your password',
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: Color(0xffE41F28)),
+                borderSide:  BorderSide(color:themecolor),
               ),
               hintStyle: const TextStyle(fontSize: 16, color: Colors.black54),
               contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
@@ -95,10 +99,12 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Homescreen(),));
+              },
               child: Text('Log In',style: TextStyle(fontSize: 18,color: Colors.white),),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xffE41F28),
+                backgroundColor: themecolor,
                 padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
               ),
             ),
@@ -109,14 +115,14 @@ class _LoginPageState extends State<LoginPage> {
                 Text("Don't have an account? "),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => SignUpPage()),
                     );
                   },
                   child: Text(
                     'Sign Up',
-                    style: TextStyle(color: Color(0xffE41F28)),
+                    style: TextStyle(color:themecolor),
                   ),
                 ),
               ],
@@ -129,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  backgroundColor: Color(0xffE41F28),
+                  backgroundColor:themecolor,
                   radius: 25,
                   child: IconButton(
                     icon: Icon(Icons.facebook, color: Colors.white,size: 32,),
@@ -137,17 +143,17 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 CircleAvatar(
-                  backgroundColor: Color(0xffE41F28),
+                  backgroundColor:themecolor,
                   radius: 25,
                   child: IconButton(
                     icon: Icon(Icons.mail, color: Colors.white,size: 32),
                     onPressed: () {},
                   ),
                 ),
-                CircleAvatar(  backgroundColor:  Color(0xffE41F28),
+                CircleAvatar(  backgroundColor:  themecolor,
                   radius: 25,
                   child: IconButton(
-                    icon: Icon(Icons.g_translate, color: Colors.white,size: 32),
+                    icon: Icon(FontAwesomeIcons.google, color: Colors.white,size: 32),
                     onPressed: () {},
                   ),
                 ),
@@ -163,7 +169,8 @@ class _LoginPageState extends State<LoginPage> {
 class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -176,7 +183,7 @@ class SignUpPage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 34,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xffE41F28))),
+                      color: themecolor)),
             ),
             SizedBox(height: 10),
             Text('Please fill the details and create account'),
@@ -189,15 +196,15 @@ class SignUpPage extends StatelessWidget {
                 alignLabelWithHint: true,
                 border: InputBorder.none,
                 labelText: "Full Name",
-                labelStyle: const TextStyle(color: Color(0xffE41F28)),
+                labelStyle:  TextStyle(color: themecolor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color:Color(0xffE41F28)),
+                  borderSide:  BorderSide(color:themecolor),
                 ),
                 hintText: 'Enter your full Name',
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color:Color(0xffE41F28)),
+                  borderSide:  BorderSide(color:themecolor),
                 ),
                 hintStyle: const TextStyle(fontSize: 16, color: Colors.black54),
                 contentPadding: const EdgeInsets.symmetric(
@@ -206,31 +213,60 @@ class SignUpPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             TextField(
+              onTap: () {},
+              cursorColor: Colors.black54,
+              style: const TextStyle(fontWeight: FontWeight.w400),
               decoration: InputDecoration(
-                labelText: 'Email',
-                border: OutlineInputBorder(),
+                alignLabelWithHint: true,
+                border: InputBorder.none,
+                labelText: "E-mail",
+                labelStyle:  TextStyle(color:themecolor),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide:  BorderSide(color:themecolor),
+                ),
+                hintText: 'Enter your Email',
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide:  BorderSide(color:themecolor),
+                ),
+                hintStyle: const TextStyle(fontSize: 16, color: Colors.black54),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 15.0, horizontal: 10.0),
               ),
             ),
             SizedBox(height: 20),
             TextField(
-              obscureText: true,
+              onTap: () {},
+              cursorColor: Colors.black54,
+              style: const TextStyle(fontWeight: FontWeight.w400),
               decoration: InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-                suffixIcon: Icon(Icons.visibility_off),
+                alignLabelWithHint: true,
+                border: InputBorder.none,
+                labelText: "Password",
+                labelStyle:  TextStyle(color: themecolor),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide:  BorderSide(color:themecolor),
+                ),
+                hintText: 'Set your password',
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide:  BorderSide(color:themecolor),
+                ),
+                hintStyle: const TextStyle(fontSize: 16, color: Colors.black54),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 15.0, horizontal: 10.0),
               ),
-            ),
-            SizedBox(height: 10),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text('Password must be at least 6 characters'),
             ),
             SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () {},
-              child: Text('Sign Up'),
+              onPressed: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Homescreen(),));
+              },
+              child: Text('Sign Up',style: TextStyle(fontSize: 18,color: Colors.white),),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
+                backgroundColor:themecolor,
                 padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
               ),
             ),
@@ -245,28 +281,40 @@ class SignUpPage extends StatelessWidget {
                   },
                   child: Text(
                     'Log In',
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyle(color: themecolor),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            Text('Or connect with'),
+            SizedBox(height: 30),
+            Text('----------   Or connect with   ----------'),
             SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                IconButton(
-                  icon: Icon(Icons.facebook, color: Colors.blue),
-                  onPressed: () {},
+                CircleAvatar(
+                  backgroundColor: themecolor,
+                  radius: 25,
+                  child: IconButton(
+                    icon: Icon(Icons.facebook, color: Colors.white,size: 32,),
+                    onPressed: () {},
+                  ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.mail, color: Colors.blueAccent),
-                  onPressed: () {},
+                CircleAvatar(
+                  backgroundColor: themecolor,
+                  radius: 25,
+                  child: IconButton(
+                    icon: Icon(Icons.mail, color: Colors.white,size: 32),
+                    onPressed: () {},
+                  ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.g_translate, color: Colors.red),
-                  onPressed: () {},
+                CircleAvatar(  backgroundColor:  themecolor,
+                  radius: 25,
+                  child: IconButton(
+                    icon: Icon(FontAwesomeIcons.google, color: Colors.white,size: 32),
+                    onPressed: () {},
+                  ),
                 ),
               ],
             ),

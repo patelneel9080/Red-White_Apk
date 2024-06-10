@@ -2,6 +2,8 @@ import 'package:arti/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'const.dart';
+
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
 
@@ -43,7 +45,7 @@ class _SplashscreenState extends State<Splashscreen> {
                       fontSize: 34,
                       fontWeight: FontWeight.bold,
 
-                      color: Color(0xffE41F28))),
+                      color: themecolor)),
             ),
             Text(
               "Multimedia Education",
@@ -51,7 +53,7 @@ class _SplashscreenState extends State<Splashscreen> {
                   textStyle: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xffE41F28))),
+                      color: themecolor)),
             ),
             SizedBox(height: size.height/8,),
             ElevatedButton(onPressed: () {
@@ -59,7 +61,7 @@ class _SplashscreenState extends State<Splashscreen> {
             },
                 style: ButtonStyle(
                   fixedSize: WidgetStatePropertyAll(Size(size.width/1.8, size.height/17)),
-                    backgroundColor: WidgetStatePropertyAll(Color(0xffE41F28))),
+                    backgroundColor: WidgetStatePropertyAll(themecolor)),
                 child: Text("Get Started   >",style: TextStyle(fontSize: 18,color: Colors.white),))
           ],
         ),
